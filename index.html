@@ -2,40 +2,224 @@
 <html class="no-js" lang="">
 
 <head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#fafafa">
 
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="apple-touch-icon" href="icon.png">
+	<!-- Place favicon.ico in the root directory -->
 
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Muli:200,300,400,700,900" rel="stylesheet">
 
-  <meta name="theme-color" content="#fafafa">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<title>Fresh Farm</title>
+
+	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <!--[if IE]>
+	<!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+	<!-- Add your site or application content here -->
+	<nav class="navbar navbar-expand-sm navbar-light">
+		<!-- Brand -->
+		<a class="navbar-brand mr-auto" href="#">Fram Fresh</a>
 
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+		<!-- Links -->
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link" href="#">Our Farm</a>
+			</li>
+			<!-- Dropdown -->
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+					Our Products
+				</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="#">Products</a>
+					<a class="dropdown-item" href="#">On Sale</a>
+					<a class="dropdown-item" href="#">Limited Time</a>
+				</div>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">About US</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Contact US</a>
+			</li>
+
+		</ul>
+	</nav>
+
+	<div id="slider" style="background-color: #555;" class="carousel slide" data-ride="carousel">
+
+		<!-- Indicators -->
+		<ul class="carousel-indicators">
+			<li data-target="#slider" data-slide-to="0" class="active"></li>
+			<li data-target="#slider" data-slide-to="1"></li>
+			<li data-target="#slider" data-slide-to="2"></li>
+		</ul>
+
+		<!-- The slideshow -->
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<div class="image-wrap text-center text-white" style="background-image: url(https://images.unsplash.com/photo-1533478583204-680d4ff74891?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=80)">
+					<div class="banner-content">
+						<div class="banner-title">
+							<span class="display-3">Welcome!</span>
+						</div>
+						<div class="banner-desc">
+							<p class="text-large">you can avail offers, discount and even free stuffs using these tricks and tipn</p>
+							<a href="#offers" class="btn btn-primary btn-lg">
+								Learn More
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class="image-wrap text-center text-white" style="background-image: url(https://images.unsplash.com/photo-1465845075873-957c8326f63e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=80)">
+					<div class="banner-content">
+						<div class="banner-title">
+							<span class="display-3">Coupons</span>
+						</div>
+						<div class="banner-desc">
+							<p class="text-large">Thease coupons will get you best deal in a market for free!</p>
+							<a href="#coupons" class="btn btn-primary btn-lg">
+								Learn More
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item text-center text-white">
+				<div class="image-wrap" style="background-image: url(https://images.unsplash.com/photo-1440428099904-c6d459a7e7b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=80)">
+					<div class="banner-content dark">
+						<div class="banner-title">
+							<span class="display-3">Discounts</span>
+						</div>
+						<div class="banner-desc">
+							<p class="text-large">There some amazing sale is going, clcik below to availe them!</p>
+							<a href="#discount" class="btn btn-primary btn-lg">
+								Learn More
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Left and right controls -->
+		<a class="carousel-control-prev" href="#slider" data-slide="prev">
+			<span class="carousel-control-prev-icon"></span>
+		</a>
+		<a class="carousel-control-next" href="#slider" data-slide="next">
+			<span class="carousel-control-next-icon"></span>
+		</a>
+	</div>
+
+	<div id="intro" class="container mt-5">
+		<div class="row row-eq-height">
+			<div class="col-5 row-eq-height">
+				<div class="full-image" style="background-image: url(https://images.unsplash.com/photo-1424593463432-4104fa2c015a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80)"></div>
+			</div>
+			<div class="col-7 row-eq-height">
+				<h1 class="display-3">
+					welcome to the
+					<span style="color: #92b955;">Green farm</span>
+				</h1>
+				<q>
+					<span style="color: #93846f;">Combining over 100 years of hard work and shared family knowledge</span>
+				</q>
+
+				<p class="mt-3">
+					Curabitur vitae ullamcorper libe roras id augue felis cras luctus nisi in tincidunt blandit sapien mi vestibulum est commodo lobortis metus mauris vitae purus blandit fermentum quamec eget urna quis sem pharetra ultricies lacinia hendrerit massa non blandit ex accums anenean eleo
+				</p>
+				<h6 >John Doe<span style="color: #373333;">/ Farm Owner</span></h6>
+			</div>
+		</div>
+	</div>
+
+	<div class="caterory-wrap">
+		<div id="caterory" class="container mt-5">
+			<div class="row d-flex justify-content-center mt-5">
+				<div class="col-3">
+					<h2>What We <span style="color: #92b955;">Offer</span></h2>
+					<p>Curabitur vitae ullamcorper libe roras id augue felis cras luctus nisi in tincidunt blandit sapien mi vestibulum est commodo lobortis metus mauris vitae</p>
+
+				</div>
+				<div class="col-3">
+					<div class="full-image cat-image" style="background-image: url(https://images.unsplash.com/photo-1540420773420-3366772f4999?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80)"></div>
+				</div>
+				<div class="col-3">
+					<div class="full-image cat-image" style="background-image: url(https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80)"></div>
+				</div>
+				<div class="col-3">
+					<div class="full-image cat-image" style="background-image: url(https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80)"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="discount-wrap">
+		<div id="discount" class="container mt-5">
+			<h2 class="display-3">Our <span style="color: #92b955;">Shop</span></h2>
+			<div class="row row-eq-height products-wrap mt-5" id="discount-list">
+				<div class="col-md-3 products-line-item row-eq-height mb-4">
+					<img class="product-image" src="{{image_link}}" />
+					<div class="product-content row-eq-height mt-3">
+						<h4 class="product-title">
+							{{title}}
+						</h4>
+						<p class="product-desc">
+							{{description}}
+						</p>
+					</div>
+					<span class="disc-lable">{{discount}} off</span>
+					<div class="product-action row-eq-height">
+						<span class="original-price">&#8377 {{original_price}}</span>
+						<span class="disc-price">&#8377 {{discount_price}}</span>
+						<a href="#offers" class="btn btn-success btn-md buy-now">
+							<i class="fa fa-shopping-cart"></i> Buy Now
+						</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<script src="js/vendor/modernizr-3.7.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script>
+		window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')
+	</script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+
+	<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+	<script>
+		window.ga = function() {
+			ga.q.push(arguments)
+		};
+		ga.q = [];
+		ga.l = +new Date;
+		ga('create', 'UA-XXXXX-Y', 'auto');
+		ga('set', 'transport', 'beacon');
+		ga('send', 'pageview')
+	</script>
+	<script src="https://www.google-analytics.com/analytics.js" async defer></script>
 </body>
 
 </html>
