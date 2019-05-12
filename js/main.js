@@ -22,7 +22,7 @@ var sheetUrl = "https://sheets.googleapis.com/v4/spreadsheets/"+sheetKey+"/value
 var discountElm = "discount-list";
 
 //discount data
-getsheetData(sheetUrl+"discounts").then(function(data){
+getsheetData(sheetUrl+"feature-products").then(function(data){
 	var tempStr = updateTemplate($("#"+discountElm).html(), data),
 		tempElm = document.getElementById(discountElm);
 
