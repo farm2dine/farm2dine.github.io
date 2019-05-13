@@ -18,6 +18,11 @@
     line-height: 1.4;
 }
 
+html.no-scroll {
+	overflow: hidden;
+	height: 100vh;
+
+}
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301

@@ -183,10 +183,14 @@
 
 	<div class="discount-wrap">
 		<div id="discount" class="container mt-5">
-			<h2 class="display-3">Our <span style="color: #92b955;">Shop</span></h2>
-			<div class="row row-eq-height products-wrap mt-5" id="discount-list">
+			<h2 class="display-3">
+				Featured <span style="color: #92b955;">Products</span>
+			</h2>
+			<div class="row row-eq-heaturedeight products-wrap mt-5" id="discount-list">
 				<div class="col-md-3 products-line-item row-eq-height mb-4">
-					<img class="product-image" src="{{image_link}}" />
+					<div class="product-image-wrap">
+						<img class="product-image" src="{{image_link}}" />
+					</div>
 					<div class="product-content row-eq-height mt-3">
 						<h4 class="product-title">
 							{{title}}
@@ -195,7 +199,7 @@
 							{{description}}
 						</p>
 					</div>
-					<span class="disc-lable">{{discount}} off</span>
+					<span class="disc-lable">{{discount}}&#37; off</span>
 					<div class="product-action row-eq-height">
 						<span class="original-price">&#8377 {{original_price}}</span> <br />
 						<span class="disc-price">&#8377 {{discount_price}}</span>
@@ -205,7 +209,13 @@
 						</a>
 					</div>
 				</div>
-
+			</div>
+			<div class="action">
+				<span class="pull-right">
+					<a href="shop.html">View All
+						<i class="fa fa-arrow-right" aria-hidden="true"></i>
+					</a>
+				</span>
 			</div>
 		</div>
 	</div>

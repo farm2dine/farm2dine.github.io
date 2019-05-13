@@ -124,8 +124,8 @@ h2 {
 }
 
 .product-image {
-	width: 100%;
-	height: 250px;
+	width: auto;
+	height: 100%;
 	background-position: center;
 	background-size: cover;
 }
@@ -136,11 +136,14 @@ h2 {
 }
 
 .buy-now {
+	margin-left: 10px;
+/*
     right: 30px;
     display: inline-block;
     margin-top: 15px;
     position: absolute;
     bottom: 0;
+*/
 }
 
 .products-wrap {
@@ -161,7 +164,7 @@ h2 {
 	margin-right: 1%;
 }
 .product-content {
-	padding-bottom: 50px;
+	padding-bottom: 70px;
 }
 
 .disc-lable {
@@ -184,4 +187,10 @@ h2 {
 	left: auto;
 	bottom: 15px;
 	width: 100%;
+}
+
+.product-image-wrap {
+	height: 250px;
+	overflow: hidden;
+	text-align: center;
 }

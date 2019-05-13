@@ -1,0 +1,181 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#fafafa">
+
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="apple-touch-icon" href="icon.png">
+	<!-- Place favicon.ico in the root directory -->
+
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Muli:200,300,400,700,900" rel="stylesheet">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<title>Farm2dine</title>
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/shop.css">
+</head>
+
+<body>
+	<!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+	<!-- Add your site or application content here -->
+	<nav class="navbar navbar-expand-sm navbar-light">
+		<!-- Brand -->
+		<a class="navbar-brand mr-auto" href="#">Farm2dine</a>
+
+		<!-- Links -->
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link" href="#">Our Farm</a>
+			</li>
+			<!-- Dropdown -->
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+					Our Products
+				</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="#">Products</a>
+					<a class="dropdown-item" href="#">On Sale</a>
+					<a class="dropdown-item" href="#">Limited Time</a>
+				</div>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">About US</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Contact US</a>
+			</li>
+
+		</ul>
+	</nav>
+
+	<div class="list-title-wrap">
+		<div class="list-title container">
+			<h2 class="pull-right list-title-content"><span style="color: #92b955;">Products</span> We Sell</h2>
+		</div>
+	</div>
+	<div class="list-wrap">
+		<div class="container category-form-wrap mt-5">
+			<div class="category-form">
+
+				<button id="filter-toggle" type="button" class="btn btn-outline-primary mr-3">Filter</button>
+
+				<button id="clear-filer" type="button" style="display: none;" class="btn btn-outline-danger">Clear All</button>
+
+				<form id="catergory-select" class="mt-3">
+					<div class="form-check category-checkbox">
+						<input type="checkbox" value="{{name}}" id="{{name}}" class="form-check-input category-checkbox-input"/>
+						<label class="form-check-label" for="{{name}}">{{name}}</label>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="product-wrap-outer">
+		<div id="product" class="container product-wrap-inner">
+<!--
+			<h2 class="display-3">
+				Featured <span style="color: #92b955;">Products</span>
+			</h2>
+-->
+			<div class="row row-eq-heaturedeight mt-5" id="product-list">
+				<div class="col-md-3 products-line-item row-eq-height mb-4" data-category="{{category}}">
+					<div class="product-image-wrap">
+						<img class="product-image" src="{{image_link}}" />
+					</div>
+					<div class="product-content row-eq-height mt-3">
+						<h4 class="product-title">
+							{{title}}
+						</h4>
+						<p class="product-desc">
+							{{description}}
+						</p>
+					</div>
+					<span class="disc-lable">{{discount}}&#37; off</span>
+					<div class="product-action row-eq-height">
+						<div class="mt-2">
+							<b>Price: </b>
+							<span class="original-price mr-1">&#8377 {{original_price}}</span>
+							<span class="disc-price">&#8377 {{discount_price}}</span>
+						</div>
+						<div class="mt-2">
+							<a href="javascript:;" class="btn btn-info btn-small show-detail">
+								Detail
+							</a>
+							<a href="javascript:;" class="btn btn-success btn-small buy-now">
+								<i class="fa fa-shopping-cart"></i> Add to Cart
+							</a>
+						</div>
+					</div>
+
+					<div class="product-detail-wrap">
+						<div class="product-detail container">
+							<div class="row row-eq-heaturedeight">
+								<div class="col-md-6 product-detail-image">
+									<img class="product-image-content" src="{{image_link}}" />
+								</div>
+								<div class="col-md-6 product-detail-content">
+									<h2 class="product-title">
+										{{title}}
+									</h2>
+									<div class="product-long-wrap">
+										<p class="product-long-desc">
+											{{long_desc}}
+										</p>
+									</div>
+								</div>
+							</div>
+						<a href="javascript:;" class="close-detail">
+						  <span>&times;</span>
+						</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="action">
+				<span class="pull-right">
+					<a href="shop.html">View All
+						<i class="fa fa-arrow-right" aria-hidden="true"></i>
+					</a>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/vendor/modernizr-3.7.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script>
+		window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')
+	</script>
+	<script src="js/plugins.js"></script>
+	<script src="js/shop.js"></script>
+
+	<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+	<script>
+		window.ga = function() {
+			ga.q.push(arguments)
+		};
+		ga.q = [];
+		ga.l = +new Date;
+		ga('create', 'UA-XXXXX-Y', 'auto');
+		ga('set', 'transport', 'beacon');
+		ga('send', 'pageview')
+	</script>
+	<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+</body>
+</html>
