@@ -24,7 +24,7 @@ function cartLoad(tmp) {
         $("#sub-total").html(calcTotal(cartData));
 
     } else {
-        $("#cart-table").html("Cart is empty, <a href='./shop'>continue shopping here</a>...");
+        $("#cart-table").html("Cart is empty, <a href='/shop'>continue shopping here</a>...");
     }
 }
 
@@ -61,7 +61,7 @@ $('document').ready(function(e){
 
 		$.get(postURL).then(function(data) {
 			var poupElm = document.getElementById("order-form-popup");
-			poupElm.innerHTML = '<h4 class="text-success">'+data+'</h4><br/><a href="./shop">Continue Shopping</a>';
+			poupElm.innerHTML = '<h4 class="text-success">'+data+'</h4><br/><a href="/shop">Continue Shopping</a>';
 			localStorage.removeItem("CART");
 
 		});
