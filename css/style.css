@@ -199,3 +199,9 @@ h2 {
 .mobile-menu {
 	display: none;
 }
+
+.footer {
+    padding: 30px 0;
+    background-color: #333;
+    color: #fff;
+}
