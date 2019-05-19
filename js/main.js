@@ -3,6 +3,12 @@ $('document').ready(function(e){
 		updateNavColor();
 	}
 	updateNavColor();
+
+	$('.mobile-menu').on("click", function(e) {
+		$(this).toggleClass("clicked");
+		$(".navbar-nav").toggleClass("mobile-nav");
+	});
+
 });
 function updateNavColor() {
 	if(window.scrollY > 200) {

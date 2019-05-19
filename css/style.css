@@ -157,7 +157,7 @@ h2 {
 	background-color: #333;
 	color: #fff;
 }
-.products-line-item.col-md-3 {
+.products-line-item.col-md-3:not('.col-12') {
 	-ms-flex: 0 0 24%;
     flex: 0 0 24%;
     max-width: 24%;
@@ -193,4 +193,8 @@ h2 {
 	height: 250px;
 	overflow: hidden;
 	text-align: center;
+}
+
+.mobile-menu {
+	display: none;
 }

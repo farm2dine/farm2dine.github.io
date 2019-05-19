@@ -1,0 +1,50 @@
+/*-- for mobile ---*/
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+	ul.navbar-nav {
+		display: none;
+		position: absolute;
+		top: 56px;
+		right: 0;
+		padding: 10px;
+		text-align: left;
+		background-color: #222;
+	}
+	ul.navbar-nav.mobile-nav {
+		display: block;
+	}
+	ul.navbar-nav .nav-item{
+		text-align: left;
+	}
+	.mobile-menu {
+		display: block;
+	}
+	.mobile-menu .open-menu {
+		display: block;
+	}
+	.mobile-menu .close-menu {
+		display: none;
+	}
+
+	.mobile-menu.clicked .open-menu {
+		display: none;
+	}
+	.mobile-menu.clicked .close-menu {
+		display: block;
+	}
+
+}
+
+/*-- for mobile landscape ---*/
+@media only screen and (min-device-width: 320px) and (max-device-width: 500px) and (orientation:portrait) {
+
+}
+
+/*-- for tablet portrait--*/
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+/*-- for tablet landscape--*/
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+}
