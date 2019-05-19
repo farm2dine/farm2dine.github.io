@@ -39,3 +39,32 @@ function calcTotal(cartData) {
 }
 
 cartLoad(templateStr);
+
+$('document').ready(function(e){
+	$("#place-order").on("click", function(e) {
+		$(".order-form-wrap").toggleClass("show");
+	});
+	$("#close-order-form").on("click", function(e) {
+		e.preventDefault();
+		$(".order-form-wrap").toggleClass("show");
+	});
+
+	$("#order-submit").on("submit", function(e){
+		e.preventDefault();
+		var OrderSubmitURL = "https://script.google.com/macros/s/AKfycbznZJzncZ5E6wulgLmIU6L51MO5FHHica9vQjbVm4fZHU6UfV0/exec?";
+		var name 	= $("#name").val(),
+			phone 	= $("#phone").val(),
+			cartObj = getLocalStorageItem("CART").map(function(v,i){
+				return v.title+"^"+v.count;
+			}),
+			postURL = OrderSubmitURL+"name="+name+"&phone="+phone+"&order="+encodeURIComponent(cartObj.join("|"));
+
+		$.get(postURL).then(function(data) {
+			var poupElm = document.getElementById("order-form-popup");
+			poupElm.innerHTML = '<h4 class="text-success">'+data+'</h4><br/><a href="/shop">Continue Shopping</a>';
+			localStorage.removeItem("CART");
+
+		});
+
+	})
+});
