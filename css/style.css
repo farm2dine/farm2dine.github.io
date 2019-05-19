@@ -10,6 +10,7 @@ body {
 	position: fixed;
 	z-index: 16;
 	width: 100%;
+    top: 0;
 }
 
 .navbar-light .navbar-nav .nav-link {

@@ -1,0 +1,186 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#fafafa">
+
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="apple-touch-icon" href="icon.png">
+	<!-- Place favicon.ico in the root directory -->
+
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Muli:200,300,400,700,900" rel="stylesheet">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<title>Farm2dine</title>
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/cart.css">
+</head>
+
+<body>
+	<!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+	<!-- Add your site or application content here -->
+	<nav class="navbar navbar-expand-sm navbar-light">
+		<!-- Brand -->
+		<a class="navbar-brand mr-auto" href="#">Farm2dine</a>
+
+		<!-- Links -->
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link" href="#">Our Farm</a>
+			</li>
+			<!-- Dropdown -->
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+					Our Products
+				</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="#">Products</a>
+					<a class="dropdown-item" href="#">On Sale</a>
+					<a class="dropdown-item" href="#">Limited Time</a>
+				</div>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">About US</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Contact US</a>
+			</li>
+
+		</ul>
+	</nav>
+
+	<div class="title-wrap">
+        <div id="cart-title" class="container">
+            <h1 class="display-3 cart-heading">
+                Shopping Cart
+            </h1>
+        </div>
+    </div>
+
+    <div class="cart-table-wrap">
+        <div id="cart-table" class="container mt-5">
+            <table class="table-striped">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th style="text-align: center;">Qunatity</th>
+                        <th>Unit Price</th>
+                        <th class="total-col">Total Price</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-line-item">
+                    <tr>
+                        <td>
+                            <span class="cart-item-image" style="background-image: url('{{image_link}}');">
+                            </span>
+                            <span class="cart-item-name">
+                                {{title}}
+                            </span>
+                            <span class="unit"> ({{quantity}} {{units}})</span>
+                            <button type="button" class="btn btn-small danger remote-item">
+                                (Remove Item)
+                            </button>
+                        </td>
+                        <td >
+                            <div class="qty-wrap">
+                                <a href="javascript:;" class="remove-qty cart-action" data-item-id="{{id}}">
+                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                                </a>
+                                <span class="cart-item">
+                                    {{count}}
+                                </span>
+                                <a href="javascript:;" class="add-qty cart-action" data-item-id="{{id}}">
+                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="original-price">&#8377 {{original_price}} </span>
+                            <span class="disc-price"> &#8377 {{discount_price}}</span>
+                        </td>
+                        <td class="total-col">
+                            &#8377 {{total}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="cart-total-table">
+                <div class="row mt-2">
+                    <div class="col-7"></div>
+                    <div class="col-3">
+                        Total:
+                    </div>
+                    <div class="col-2 total-price">
+                        &#8377 <span id="sub-total"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="place-order pull-right mt-4 mb-5">
+                <button type="button" class="btn btn-large btn-success order-btn">
+                    Place Order
+                </button>
+            </div>
+            
+            <div class="order-form-wrap">
+                <div class="order-form-inner">
+                    <form action="/action_page.php">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" required placeholder="Full Name" id="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number:</label>
+                            <input type="number" max="10" class="form-control" required placeholder="Mobile Number" id="phone">
+                        </div>
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" name="remember" required> I agree on blabla.
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+	<script src="js/vendor/modernizr-3.7.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script>
+		window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')
+	</script>
+	<script src="js/plugins.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/cart.js"></script>
+
+	<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+	<script>
+		window.ga = function() {
+			ga.q.push(arguments)
+		};
+		ga.q = [];
+		ga.l = +new Date;
+		ga('create', 'UA-XXXXX-Y', 'auto');
+		ga('set', 'transport', 'beacon');
+		ga('send', 'pageview')
+	</script>
+	<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+</body>
+</html>

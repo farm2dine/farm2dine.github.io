@@ -3,6 +3,8 @@
 	background-image: url(https://source.unsplash.com/08bOYnH_r_E/1920x800);
 	height: 80vh;
 	position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .list-title {
