@@ -12,6 +12,11 @@ $('document').ready(function(e){
 	});
 });
 
+//query encoding
+function getQueryStringValue (key) {
+  return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+}
+
 function updateCartCount() {
 	var cartObj = JSON.parse(localStorage.getItem('CART'));
 	if(cartObj) {

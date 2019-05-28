@@ -52,6 +52,13 @@
 	.order-form-inner {
 		width: 80%;
 	}
+
+    .products-line-item.col-md-3.col-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-right: 0;
+    }
 }
 
 /*-- for mobile landscape ---*/

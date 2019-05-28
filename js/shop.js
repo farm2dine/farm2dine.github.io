@@ -16,10 +16,15 @@ getsheetData(sheetUrl+"products").then(function(data){
 
 	$('.show-detail').on("click", function(e){
 		var parentElm = $(e.currentTarget).parents(".product-action"),
-			detailWrap = parentElm.siblings(".product-detail-wrap");
+			detailWrap = parentElm.siblings(".product-detail-wrap"),
+            title = e.currentTarget.getAttribute("data-title"),
+            prodId = e.currentTarget.getAttribute("data-id");
 
 		$('html').addClass("no-scroll");
 		$(detailWrap).show();
+
+        history.pushState({product: title}, title, "?productid="+prodId);
+
 
 	});
 
@@ -28,7 +33,16 @@ getsheetData(sheetUrl+"products").then(function(data){
 
 		parentElm.hide();
 		$('html').removeClass("no-scroll");
+
+        history.pushState("","", "?");
 	});
+
+    var prodId = getQueryStringValue("productid");
+
+    if(prodId.trim()) {
+        $('.product-detail-wrap[data-id="'+prodId+'"]').show();
+    }
+
 	return getsheetData(sheetUrl+"categories");
 }).then(function(data){
 	var tempStr = updateTemplate($("#"+categoryElm).html(), data),
@@ -89,11 +103,13 @@ function handleAddToCartBtnClick(e) {
     
     dataObj.count = "1";
     dataObj.total = dataObj.discount_price;
-    updateCartCount();
     if(oldCart) {
         updatedCart = addToCart(dataObj, 1);
     } else {
         updatedCart = [dataObj];
     }
 	setLocalStorageItem('CART', JSON.stringify(updatedCart));
+    updateCartCount();
+
+    $('[data-id="'+index+'"]').html('<i class="fas fa-shopping-cart"></i> Added to Cart');
 }
