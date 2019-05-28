@@ -111,5 +111,5 @@ function handleAddToCartBtnClick(e) {
 	setLocalStorageItem('CART', JSON.stringify(updatedCart));
     updateCartCount();
 
-    $('[data-id="'+index+'"]').html('<i class="fas fa-shopping-cart"></i> Added to Cart');
+    $('.cart-btn[data-id="'+index+'"]').html('<i class="fas fa-shopping-cart"></i> Added to Cart');
 }
