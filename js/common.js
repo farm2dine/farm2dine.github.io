@@ -1,14 +1,26 @@
 $('document').ready(function(e){
-		document.onscroll = function(e) {
+
+	document.onscroll = function(e) {
 		updateNavColor();
 	}
 	updateNavColor();
+	updateCartCount();
 
 	$('.mobile-menu').on("click", function(e) {
 		$(this).toggleClass("clicked");
 		$(".navbar-nav").toggleClass("mobile-nav");
 	});
 });
+
+function updateCartCount() {
+	var cartObj = JSON.parse(localStorage.getItem('CART'));
+	if(cartObj) {
+		var counterElm = document.getElementById("cart-counter");
+		$(".cart-count").show();
+		counterElm.innerHTML = "("+cartObj.length+")";
+	}
+}
+
 function updateNavColor() {
 	if(window.scrollY > 200) {
 		$('nav.navbar').addClass('scroll');
@@ -73,8 +85,7 @@ function addToCart(data, times) {
             isNew = true;
         }
     }
-    (isNew && cartData.push(data))
-    
+    (isNew && cartData.push(data));
     return cartData;
 }
 

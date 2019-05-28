@@ -23,14 +23,15 @@ body {
 }
 
 .navbar.navbar-light.scroll{
-	color: #fff;
-	background-color: #92b955;
+	color: #333;
+	background-color: #eeffd4;
+    box-shadow: 1px 1px 10px rgba(1,1,1,0.3);
 }
 .navbar-light.scroll .navbar-nav .nav-link {
-	color: #fff;
+	color: #333;
 }
 .navbar-light.scroll .navbar-nav .nav-link:hover {
-	color: #fff;
+	color: #111;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.3)
 }
 .nav-item {
@@ -201,7 +202,15 @@ h2 {
 }
 
 .footer {
+	clear: both;
     padding: 30px 0;
     background-color: #333;
     color: #fff;
+}
+
+.cart-count {
+	display: none;
+	margin-right: 15px;
+	text-decoration: none;
+    color: #111;
 }

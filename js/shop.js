@@ -89,7 +89,7 @@ function handleAddToCartBtnClick(e) {
     
     dataObj.count = "1";
     dataObj.total = dataObj.discount_price;
-    
+    updateCartCount();
     if(oldCart) {
         updatedCart = addToCart(dataObj, 1);
     } else {
