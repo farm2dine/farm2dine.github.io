@@ -110,12 +110,12 @@ h2 {
 	font-size: 3em;
 }
 
-.container {
-/*	padding: 3rem 0;*/
+#caterory.container {
+	padding: 3rem 0;
 }
 
 .caterory-wrap {
-	background-color: #555;
+	background-color: #444;
 	color: #fff;
 }
 
