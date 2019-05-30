@@ -1,24 +1,3 @@
-$('document').ready(function(e){
-	document.onscroll = function(e) {
-		updateNavColor();
-	}
-	updateNavColor();
-
-	$('.mobile-menu').on("click", function(e) {
-		$(this).toggleClass("clicked");
-		$(".navbar-nav").toggleClass("mobile-nav");
-	});
-
-});
-function updateNavColor() {
-	if(window.scrollY > 200) {
-		$('nav.navbar').addClass('scroll');
-	} else if($('nav.navbar').hasClass('scroll')) {
-		$('nav.navbar').removeClass('scroll');
-	}
-}
-
-
 //---------- update content from google sheet
 var globalData = {};
 var sheetKey = "1Y5gtD0hx9_HVPn8z2xhE94isolQvizszYNrcE8b8MC0";

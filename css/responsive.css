@@ -64,6 +64,17 @@
         display: inline-block;
         width: 49%;
     }
+
+    .list-title-wrap {
+        background-image: url(https://source.unsplash.com/4J059aGa5s4/600x800);
+        height: 80vh;
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .product-wrap-outer {
+        padding: 0 20px;
+    }
 }
 
 /*-- for mobile landscape ---*/
