@@ -1,6 +1,6 @@
 
 .list-title-wrap {
-	background-image: url(https://source.unsplash.com/f-TWhXOrLiU/1920x800);
+	background-image: url(https://source.unsplash.com/Ww8eQWjMJWk/1920x800);
 	height: 80vh;
 	position: relative;
     background-size: cover;
@@ -12,10 +12,10 @@
 }
 
 .list-title-content {
-	position: absolute;
-	top: 50%;
-	right: 20%;
-	transform: translateY(-50%);
+    position: absolute;
+    top: 60%;
+    left: auto;
+    transform: translateY(-50%);
 }
 
 .category-checkbox {

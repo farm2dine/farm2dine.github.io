@@ -66,7 +66,7 @@
     }
 
     .list-title-wrap {
-        background-image: url(https://source.unsplash.com/f-TWhXOrLiU/600x800);
+        background-image: url(https://source.unsplash.com/Ww8eQWjMJWk/600x600);
         height: 80vh;
         position: relative;
         background-size: cover;
@@ -78,6 +78,13 @@
     .navbar-light .navbar-nav .nav-link {
         color: #92b955;
         transition: all 1s;
+    }
+    .list-title-content {
+        position: absolute;
+        top: 70%;
+        right: 10%;
+        padding: 0 30px;
+        transform: translateY(-50%);
     }
 }
 
