@@ -75,6 +75,10 @@
     .product-wrap-outer {
         padding: 0 20px;
     }
+    .navbar-light .navbar-nav .nav-link {
+        color: #92b955;
+        transition: all 1s;
+    }
 }
 
 /*-- for mobile landscape ---*/
