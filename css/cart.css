@@ -50,11 +50,11 @@
 
 .cart-action {
     padding: 9px 10px;
-    border-radius: 20px;
     background-color: #ddd;
     color: #333;
     font-size: 6px;
     line-height: 0;
+    vertical-align: middle;
 }
 
 .cart-item {
@@ -65,7 +65,7 @@
 }
 
 .qty-wrap {
-    text-align: center;
+/*    text-align: center;*/
 }
 
 .cart-table-wrap .total-col {
@@ -109,4 +109,25 @@
 	transform: translate(-50%,-50%);
 	padding: 2rem;
     width: 600px;
+}
+
+.qty-action {
+    float: left;
+    background-color: #fff;
+}
+
+.cart-table-wrap th.qty-col {
+    padding-left: 40px;
+}
+
+.unit {
+
+}
+
+.unit-cart {
+    margin-left: 10px;
+}
+
+.place-order {
+    text-align: right;
 }

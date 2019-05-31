@@ -79,12 +79,23 @@
         color: #92b955;
         transition: all 1s;
     }
+    .navbar-light.scroll .navbar-nav .nav-link {
+        color: #92b955;
+    }
     .list-title-content {
         position: absolute;
         top: 70%;
         right: 10%;
         padding: 0 30px;
         transform: translateY(-50%);
+    }
+    .unit-cart {
+        display: block;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .qty-action {
+        float: none;
     }
 }
 

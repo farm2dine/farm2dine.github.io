@@ -87,7 +87,7 @@
                 <thead>
                     <tr>
                         <th>Product</th>
-                        <th style="text-align: center;">Qty</th>
+                        <th class="qty-col">Qty</th>
                         <th class="mobile-hide">Unit Price</th>
                         <th class="total-col">Total Price</th>
                     </tr>
@@ -100,22 +100,24 @@
                             <span class="cart-item-name">
                                 {{title}}
                             </span>
-                            <span class="unit"> ({{quantity}} {{units}})</span>
                             <button type="button" class="btn btn-small danger remote-item">
                                 (Remove Item)
                             </button>
                         </td>
                         <td >
                             <div class="qty-wrap">
-                                <a href="javascript:;" class="remove-qty cart-action" data-item-id="{{id}}">
-                                    <i class="fa fa-minus" aria-hidden="true"></i>
-                                </a>
-                                <span class="cart-item">
-                                    {{count}}
-                                </span>
-                                <a href="javascript:;" class="add-qty cart-action" data-item-id="{{id}}">
-                                    <i class="fa fa-plus" aria-hidden="true"></i>
-                                </a>
+                                <div class="qty-action">
+                                    <a href="javascript:;" class="remove-qty cart-action" data-item-id="{{id}}">
+                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                    </a>
+                                    <span class="cart-item">
+                                        {{count}}
+                                    </span>
+                                    <a href="javascript:;" class="add-qty cart-action" data-item-id="{{id}}">
+                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <span class="unit-cart"> x ({{quantity}} {{units}})</span>
                             </div>
                         </td>
                         <td class="mobile-hide">
@@ -142,7 +144,7 @@
             </div>
 
             <div class="place-order pull-right mt-4 mb-5">
-                <button type="button" id="place-order" class="btn btn-large btn-success order-btn">
+                <button type="button" id="place-order" class="btn btn-lg btn-success order-btn">
                     Place Order
                 </button>
             </div>
