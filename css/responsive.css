@@ -113,6 +113,13 @@
         margin-top: 20px;
         font-size: 1.75rem;
     }
+    .feature-inner {
+        width: 100%;
+        overflow-x: auto;
+    }
+    .contact-address {
+        padding-left: 15px;
+    }
 }
 
 /*-- for mobile landscape ---*/
@@ -132,7 +139,5 @@
 
 
 
-.feature-inner {
-    width: 100%;
-    overflow-x: auto;
-}
+
+

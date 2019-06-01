@@ -80,7 +80,7 @@ getsheetData(sheetUrl+"products").then(function(data){
 function checkQty(prodId) {
     var cartData = getLocalStorageItem("CART");
 
-    if(cartData && cartData.length > 0) {
+    if(cartData) {
         for(var i=0; i < cartData.length; i++) {
             if(prodId == cartData[i].id) {
                 var qty = cartData[i].count;

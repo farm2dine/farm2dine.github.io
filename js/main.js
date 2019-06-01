@@ -57,3 +57,27 @@ function updateTemplate(template, data) {
 	});
 	return tempArray;
 }
+
+
+function contactUs(elm) {
+
+    var firstName   = $("#contact-firstname").val(),
+        lastName    = $("#contact-lastname").val(),
+        email    = $("#contact-email").val(),
+        phone    = $("#contact-phone").val(),
+        message    = $("#contact-message").val(),
+
+        url = "https://script.google.com/macros/s/AKfycbzGMTkTaTU0TBbWby7R4dpVO_K5rrBK5gxiZtJOzzdMwOSAJozk/exec?",
+        queryStr = "firstname="+firstName+"&lastname="+lastName+"&email="+email+"&phone="+phone+"&message="+message;
+
+    $("#contact-submit").attr("disabled", true);
+    $("#contact-submit .spinner-border").show();
+
+    $.get(url+queryStr).then(function(data){
+        $("#contact-submit").attr("disabled", false);
+        $(elm).trigger('reset');
+    $("#contact-submit .spinner-border").hide();
+        $(".contact-message").fadeIn(500).delay(5000).fadeOut(1000);
+    });
+
+}

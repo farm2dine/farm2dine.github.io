@@ -74,6 +74,24 @@ function calcTotal(cartData) {
     return subTotal;
 }
 
+function removeItem(id) {
+    var cartData    = getLocalStorageItem('CART'),
+        newCart = [];
+
+    for(var i = 0; i < cartData.length; i++) {
+        if(cartData[i].id != id) {
+            newCart.push(cartData[i]);
+        }
+    }
+    if(newCart.length == 0){
+        localStorage.removeItem("CART");
+    } else {
+        setLocalStorageItem('CART', JSON.stringify(newCart));
+    }
+    cartLoad(templateStr);
+    updateCartCount()
+}
+
 cartLoad(templateStr);
 
 $('document').ready(function(e){

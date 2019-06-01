@@ -216,5 +216,23 @@ h2 {
 }
 
 #slider {
+/*    margin-top: 50px;*/
+}
+.contact-wrap {
+    padding: 20px 10px;
+    background-color: #444;
     margin-top: 50px;
+    color: #fff;
+}
+.help-line {
+    color: #57a8ff;
+}
+
+.contact-address {
+    padding-left: 100px;
+}
+
+.contact-message {
+    display: none;
+    margin-left: 20px;
 }
