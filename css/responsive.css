@@ -97,6 +97,18 @@
     .qty-action {
         float: none;
     }
+    .title-wrap {
+        background-image: url(https://source.unsplash.com/ZKNsVqbRSPE/800x400);
+    }
+    .product-detail {
+        width: 90%;
+        height: 90%;
+        overflow-y: auto;
+    }
+    .product-title {
+        margin-top: 20px;
+        font-size: 1.75rem;
+    }
 }
 
 /*-- for mobile landscape ---*/

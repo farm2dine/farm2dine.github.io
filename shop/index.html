@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title></title>
+	<title>Farm2Dine - Products</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="theme-color" content="#fafafa">
@@ -21,8 +21,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	<title>Farm2dine</title>
 
+	<link rel="stylesheet" href="../css/main.css">
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/shop.css">
 	<link rel="stylesheet" href="../css/responsive.css">
@@ -42,7 +42,12 @@
 		<a href="/cart" class="cart-count">
 			<i class="fas fa-shopping-cart"></i>
 			<span id="cart-counter"></span>
+
+
 		</a>
+        <span class="checkout-btn cart-count">
+            <a href="/cart/" class="btn btn-outline-primary btn-lg">Checkout</a>
+        </span>
 		<button type="button" class="btn btn-small mobile-menu btn-dark">
 			<span class="open-menu">
 				<i class="fas fa-bars"></i>
@@ -121,6 +126,7 @@
 							<b>Price: </b>
 							<span class="original-price mr-1">&#8377 {{original_price}}</span>
 							<span class="disc-price">&#8377 {{discount_price}}</span>
+                            <span class="text-success add-to-cart-msg" data-item-id={{id}}>(Added !)</span>
 						</div>
 						<div class="mt-2">
 							<a href="javascript:;" class="btn btn-info btn-small show-detail" data-title="{{title}}" data-id={{id}}>
@@ -148,10 +154,14 @@
 										</p>
 									</div>
                                     <div class="cart-wrap mt-4">
-                                        <a href="javascript:;" onclick="handleAddToCartBtnClick(event)" class="btn btn-success btn-small cart-btn" data-id={{id}}>
-                                            <i class="fas fa-shopping-cart"></i> Add to Cart
-                                        </a>
+                                        <form name="qty-form" onsubmit="event.preventDefault(); handleAddToCartBtnClick(event);" data-id={{id}}>
+                                            <label>Qty: </label>
+                                            <input type="number" data-item-id="{{id}}" min="1" max="999" class="form-control product-qty" value=1 required="" placeholder="Qty">
+                                            <input type="submit" class="btn btn-primary btn-small cart-btn" data-id={{id}} value="Add to Cart">
+                                            <span class="text-success add-to-cart-msg" data-item-id={{id}}>(Added to Cart!)</span>
+                                        </form>
                                     </div>
+                                    <p class="added-msg" data-id={{id}}>Item is available in your cart. You can continue to <a href="/cart/">Checkout / Cart</a></p>
 								</div>
 							</div>
 						<a href="javascript:;" class="close-detail">

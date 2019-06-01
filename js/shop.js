@@ -6,6 +6,14 @@ var sheetUrl = "https://sheets.googleapis.com/v4/spreadsheets/"+sheetKey+"/value
 var discountElm = "product-list";
 var categoryElm = "catergory-select";
 
+$(document).ready(function() {
+  $(window).keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
 
 //product data
 getsheetData(sheetUrl+"products").then(function(data){
@@ -21,11 +29,9 @@ getsheetData(sheetUrl+"products").then(function(data){
             prodId = e.currentTarget.getAttribute("data-id");
 
 		$('html').addClass("no-scroll");
+        checkQty(prodId)
 		$(detailWrap).show();
-
         history.pushState({product: title}, title, "?productid="+prodId);
-
-
 	});
 
 	$('.close-detail').on("click", function(e){
@@ -41,6 +47,7 @@ getsheetData(sheetUrl+"products").then(function(data){
 
     if(prodId.trim()) {
         $('.product-detail-wrap[data-id="'+prodId+'"]').show();
+        checkQty(prodId)
     }
 
 	return getsheetData(sheetUrl+"categories");
@@ -69,6 +76,22 @@ getsheetData(sheetUrl+"products").then(function(data){
 //	console.log(nameArray);
 });
 
+
+function checkQty(prodId) {
+    var cartData = getLocalStorageItem("CART");
+
+    if(cartData && cartData.length > 0) {
+        for(var i=0; i < cartData.length; i++) {
+            if(prodId == cartData[i].id) {
+                var qty = cartData[i].count;
+                $('.added-msg[data-id="'+prodId+'"]').show();
+                //$('.cart-btn[data-id="'+prodId+'"]').html('<i class="fas fa-shopping-cart"></i> Added to Cart ('+qty+')');
+                break;
+            }
+        }
+    }
+}
+
 function updateFiler() {
 	var isEmpty = true;
 
@@ -89,6 +112,8 @@ function updateFiler() {
 }
 
 function handleAddToCartBtnClick(e) {
+    var qtyVal = $(e.currentTarget).find(".product-qty").val();
+
 	var index = e.currentTarget.dataset["id"];
 	var item = window.$ProductData.filter(function(val) {
 		return val.id == index;
@@ -101,15 +126,18 @@ function handleAddToCartBtnClick(e) {
 		.reduce((res, o) => Object.assign(res, o), {});
 	var oldCart = getLocalStorageItem('CART');
     
-    dataObj.count = "1";
+    dataObj.count = qtyVal && parseInt(qtyVal, 10) || 1;
     dataObj.total = dataObj.discount_price;
     if(oldCart) {
-        updatedCart = addToCart(dataObj, 1);
+        updatedCart = addToCart(dataObj, qtyVal && parseInt(qtyVal, 10) || 1);
     } else {
         updatedCart = [dataObj];
     }
 	setLocalStorageItem('CART', JSON.stringify(updatedCart));
     updateCartCount();
 
-    $('.cart-btn[data-id="'+index+'"]').html('<i class="fas fa-shopping-cart"></i> Added to Cart');
+    checkQty(index);
+    $(".add-to-cart-msg[data-item-id="+index+"]").fadeIn(500);
+    $(".add-to-cart-msg[data-item-id="+index+"]").delay(5000).fadeOut(1000);
+//    $('.cart-btn[data-id="'+index+'"]').html('<i class="fas fa-shopping-cart"></i> Added to Cart');
 }

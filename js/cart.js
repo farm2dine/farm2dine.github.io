@@ -23,9 +23,45 @@ function cartLoad(tmp) {
         
         $("#sub-total").html(calcTotal(cartData));
 
+        $("#qty-form").on("submit",function(e){
+            e.preventDefault();
+            var itemId = $(e.currentTarget).attr("data-item-id");
+            var newVal  = parseInt($("#qty-val").val(),10),
+                oldVal  = parseInt($("#qty-val").attr("data-old-val"),10),
+                qty     = newVal - oldVal;
+
+            for(var i=0; i < cartData.length; i++) {
+                if(itemId == cartData[i].id) {
+                    setLocalStorageItem('CART', JSON.stringify(addToCart(cartData[i], qty)));
+                    cartLoad(templateStr);
+                    break;
+                }
+            }
+
+        })
+
     } else {
         $("#cart-table").html("Cart is empty, <a href='/shop'>continue shopping here</a>...");
     }
+}
+
+function qytUpdate(e) {
+    e.preventDefault();
+    var cartData = getLocalStorageItem("CART");
+    var inputElm = $(e.currentTarget).find(".qty-control");
+    var itemId  = inputElm.attr("data-item-id");
+    var newVal  = parseInt(inputElm.val(),10),
+        oldVal  = parseInt(inputElm.attr("data-old-val"),10),
+        qty     = newVal - oldVal;
+
+    for(var i=0; i < cartData.length; i++) {
+        if(itemId == cartData[i].id) {
+            setLocalStorageItem('CART', JSON.stringify(addToCart(cartData[i], qty)));
+            cartLoad(templateStr);
+            break;
+        }
+    }
+    return false;
 }
 
 function calcTotal(cartData) {

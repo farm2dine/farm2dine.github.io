@@ -69,6 +69,8 @@
 
 .product-detail-content {
 	color: #333;
+    position: relative;
+    padding-bottom: 30px;
 }
 
 .product-long-wrap {
@@ -93,4 +95,24 @@
     padding: 5px;
     line-height: 1;
     background: #333;
+}
+
+.added-msg {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+}
+
+.product-qty {
+    max-width: 80px;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.add-to-cart-msg {
+    font-weight: 600;
+    margin-left: 20px;
+    display: none;
 }

@@ -55,13 +55,16 @@
     font-size: 6px;
     line-height: 0;
     vertical-align: middle;
+    float: left;
 }
 
 .cart-item {
     margin: 0 10px;
     display: inline-block;
-    width: 20px;
+    width: 40px;
+    overflow: hidden;
     text-align: center;
+    float: left;
 }
 
 .qty-wrap {
@@ -130,4 +133,16 @@
 
 .place-order {
     text-align: right;
+}
+
+.qty-control {
+    padding: 0 5px;
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+    border: none;
+}
+
+input.qty-control:focus {
+    outline: navajowhite;
 }

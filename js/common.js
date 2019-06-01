@@ -83,7 +83,7 @@ function addToCart(data, times) {
         var qty = parseInt(cartData[i].count, 10) + times;
         if(cartData[i].id == data.id) {
             cartData[i].count = (qty > 0 ? qty : 1) + "";
-            cartData[i].total = parseInt(cartData[i].count, 10) * parseInt(cartData[i].discount_price, 10) + "";
+            cartData[i].total = parseInt(cartData[i].count, 10) * parseInt(cartData[i].discount_price, 10);
             isNew = false;
             break;
         } else {
