@@ -201,31 +201,33 @@
 			<h2 class="display-3">
 				Featured <span style="color: #92b955;">Products</span>
 			</h2>
-			<div class="row row-eq-heaturedeight products-wrap mt-5" id="discount-list">
-				<div class="col-md-3 col-12 products-line-item row-eq-height mb-4">
-					<div class="product-image-wrap">
-						<img class="product-image" src="{{image_link}}" />
-					</div>
-					<div class="product-content row-eq-height mt-3">
-						<h4 class="product-title">
-							{{title}}
-						</h4>
-						<p class="product-desc">
-							{{description}}
-						</p>
-					</div>
-					<span class="disc-lable">{{discount}}&#37; off</span>
-					<div class="product-action row-eq-height">
-						<span class="original-price">&#8377 {{original_price}}</span> <br />
-						<span class="disc-price">&#8377 {{discount_price}}</span>
+            <div class="feature-inner">
+                <div class="row row-eq-heaturedeight products-wrap mt-5 feature-product-mobile" id="discount-list">
+                    <div class="col-md-3 col-12 products-line-item row-eq-height mb-4">
+                        <div class="product-image-wrap">
+                            <img class="product-image" src="{{image_link}}" />
+                        </div>
+                        <div class="product-content row-eq-height mt-3">
+                            <h4 class="product-title">
+                                {{title}}
+                            </h4>
+                            <p class="product-desc">
+                                {{description}}
+                            </p>
+                        </div>
+                        <span class="disc-lable">{{discount}}&#37; off</span>
+                        <div class="product-action row-eq-height">
+                            <span class="original-price">&#8377 {{original_price}}</span> <br />
+                            <span class="disc-price">&#8377 {{discount_price}}</span>
 
-						<a href="/shop?productid={{id}}" class="btn btn-info btn-md buy-now">
-                            Learn More
-							<i class="fas fa-info-circle"></i>
-						</a>
-					</div>
-				</div>
-			</div>
+                            <a href="/shop?productid={{id}}" class="btn btn-info btn-md buy-now">
+                                Learn More
+                                <i class="fas fa-info-circle"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 			<div class="action">
 				<span class="pull-right">
 					<a href="/shop" class="btn btn-lg btn-dark">View All

@@ -12,9 +12,17 @@ getsheetData(sheetUrl+"feature-products").then(function(data){
 		tempElm = document.getElementById(discountElm);
 
 	tempElm.innerHTML = tempStr.join(" ");
+    featureItemSlider();
 });
 
+function featureItemSlider() {
+    if(document.documentElement.clientWidth < 768) {
+        var itemsCount = $(".feature-product-mobile").children().length,
+            wrapWidth  = itemsCount * 295;
 
+        $(".feature-product-mobile").css({width: wrapWidth+"px"});
+    }
+}
 
 
 
